@@ -1,0 +1,8 @@
+[GENERAL]
+Role = Master
+Hostname = FullerUSBMaster
+Size=128
+
+[SLAVE-SETTINGS]
+Hostname = FullerUSBMaster
+
