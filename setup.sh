@@ -63,7 +63,7 @@ if [ ! -f ./.init ]; then
 	dos2unix /var/www/html/settings.push
 	cp /usr/lib/python3.7/configparser.py /usr/lib/python3.7/ConfigParser.py
 
-	python3 $OPTDIR/service.py init
+	#python3 $OPTDIR/service.py init
 
 	sudo systemctl daemon-reload
 	sudo systemctl enable fullerusbservice.service

@@ -88,7 +88,7 @@ def checkHostname():
 def setHostname(newhostname=configPush['GENERAL']['Hostname']):
     with open('/etc/hosts', 'r') as file:
 	    data = file.readlines()
-	    data[1] = '127.0.1.1       ' + newhostname
+	    data[1] = '127.0.0.1       ' + newhostname
 	    with open('temp.txt', 'w') as file:
 	        file.writelines( data )
 	    os.system('sudo mv temp.txt /etc/hosts')
@@ -169,7 +169,7 @@ def buildImage():
 	if not os.path.isfile(container['path']):
 		getPushSize()
 		os.system('sudo dd bs=1M if=/dev/zero of=' + container['path'] + ' count=' + container['size'])
-		os.system('sudo /sbin/mkdosfs ' + container['path'] + ' -F 32 -I')
+		os.system('sudo /sbin/mkdosfs ' + container['path'] + ' -F 16 -I')
 	return True
 	
 def checkMountPath():
